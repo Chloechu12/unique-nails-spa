@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-
+import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <section
       id="hero"
       aria-label="Hero Section"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="min-h-screen flex items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0 z-0">
         <img
@@ -15,33 +15,52 @@ const Hero = () => {
           className="w-full h-full object-cover brightness-[0.8]"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60" />
       </div>
 
-      <div className="relative z-10 text-center text-white">
-        <p className="text-5xl font-['Cormorant_Garamond',serif] mb-5 font-light">
-          Relax, Refresh & <br />
-          <em className="text-6xl italic text-rose-dark">Shine</em>
-        </p>
+      <div className="relative z-10 text-center text-white space-y-8">
+        <motion.h1
+          className="font-['Cormorant_Garamond',serif] text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-none tracking-tight max-w-4xl"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+        >
+          Relax, Refresh
+          <br />
+          <span className="italic text-fuchsia-400">&amp; Shine</span>
+        </motion.h1>
 
-        <div className="mt-8 flex justify-center gap-4">
+        <motion.p
+          className="mx-auto max-w-xl font-['Inter',sans-serif] text-base font-light leading-relaxed text-white/75 md:text-lg"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+        >
+          Where beauty, comfort, and self-care come together. Enjoy professional nail care in a relaxing and welcoming environment.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+          className="flex items-center justify-center gap-4">
           <a
             href="#booking"
-            className="rounded-full font-semibold transition-[background-color, text-color] duration-300 hover:bg-white px-6 py-3 text-white hover:text-black bg-transparent border"
+            className="px-8 py-4 rounded-full bg-stone-600 inline-flex items-center justify-center text-sm text-white shadow-md transition-all duration-300 hover:bg-stone-500 hover:shadow-lg"
           >
             Book Now
           </a>
 
           <Link
             to="/services"
-            className="flex items-center gap-2 rounded-full font-semibold transition-[background-color, text-color] duration-300 hover:bg-white px-6 py-3 text-white hover:text-black bg-transparent border"
+            className="px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/40 group inline-flex items-center justify-center gap-2 text-sm text-white/90 shadow-md transition-all duration-300 hover:bg-white/20 hover:border-white/70 hover:text-white hover:shadow-lg"
           >
-            Services
-            <ArrowRight size={16} />
+            Our Services
+            <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" />
           </Link>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </section >
   );
 }
 

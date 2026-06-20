@@ -50,7 +50,7 @@ export default function Navbar() {
                 end={to === "/"}
                 className={({ isActive }) =>
                   cn(
-                    "relative pb-1 tracking-wide transition-colors duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-full after:origin-left after:bg-current after:transition-transform after:duration-300 after:content-['']",
+                    "relative pb-1 tracking-wide transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-1 after:w-full after:origin-left after:bg-current after:transition-transform after:duration-300 after:content-['']",
                     scrolled
                       ? isActive
                         ? "text-foreground font-semibold after:scale-x-100"
