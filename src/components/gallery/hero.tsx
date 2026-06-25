@@ -8,7 +8,7 @@ const overlayImages = [
   { src: "/images/IMG_3663.JPG", alt: "Salon" },
 ] as const;
 
-export default function GalleryHero() {
+export default function Hero() {
   return (
     <section
       className="relative min-h-[70vh] overflow-hidden flex items-center justify-center"
