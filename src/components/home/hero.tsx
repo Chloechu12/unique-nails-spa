@@ -20,14 +20,14 @@ const Hero = () => {
 
       <div className="relative z-10 text-center text-white space-y-8">
         <motion.h1
-          className="font-['Cormorant_Garamond',serif] text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-none tracking-tight max-w-4xl"
+          className="font-['Cormorant_Garamond',serif] text-5xl sm:text-6xl md:text-7xl lg:text-8xl bg-gradient-to-r from-[#F7E7A1] via-[#D4AF37] to-[#B8860B] bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(212,175,55,0.5)] after:scale-x-100 after:bg-[#D4AF37] leading-none tracking-tight max-w-4xl"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
         >
           Relax, Refresh
           <br />
-          <span className="italic text-fuchsia-400">&amp; Shine</span>
+          <span className="bg-gradient-to-r from-[#F7E7A1] via-[#D4AF37] to-[#B8860B] bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(212,175,55,0.5)] after:scale-x-100 after:bg-[#D4AF37]"> Shine</span>
         </motion.h1>
 
         <motion.p

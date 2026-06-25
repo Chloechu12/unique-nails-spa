@@ -1,9 +1,14 @@
+import GalleryHero from "@/components/gallery/GalleryHero";
+import GallerySection from "@/components/gallery/GallerySection";
+
 const GalleryPage = () => {
   return (
-    <div>
-      gallery
-    </div>
-  )
-}
+    <>
+      <GalleryHero />
+      <GallerySection />
+    </>
+  );
+};
 
-export default GalleryPage
+export default GalleryPage;
+

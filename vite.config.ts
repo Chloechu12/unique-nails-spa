@@ -16,6 +16,6 @@ export default defineConfig({
 
   ],
   server: {
-    allowedHosts: ["demonstrated-bio-sky-custody.trycloudflare.com"],
+    allowedHosts: ["mardi-opposition-archive-motors.trycloudflare.com " ],
   },
 })

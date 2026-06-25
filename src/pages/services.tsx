@@ -1,12 +1,13 @@
-
+import Hero from "@/components/services/hero";
+import ServicesSection from "@/components/services/services-section";
 
 const ServicePage = () => {
   return (
-    <div>
-      gallery
-    </div>
-  )
-}
+    <>
+      <Hero />
+      <ServicesSection />
+    </>
+  );
+};
 
 export default ServicePage;
-

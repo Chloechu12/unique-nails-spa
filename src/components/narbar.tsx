@@ -3,7 +3,12 @@ import { NavLink } from "react-router-dom";
 import { Button } from "./ui/button";
 
 import { Menu } from "lucide-react";
-import { Sheet, SheetContent, SheetDescription, SheetTitle } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -25,20 +30,26 @@ export default function Navbar() {
       <nav
         className={cn(
           "px-4 h-25 fixed flex items-center top-0 left-0 right-0 z-30 bg-transparent transition-[background-color,border-color,box-shadow] duration-300",
-          scrolled && "bg-background/90 shadow-md backdrop-blur-sm",
+          scrolled && "bg-[#171313]/90 shadow-md backdrop-blur-sm",
         )}
       >
         <div className="max-w-7xl mx-auto flex w-full items-center justify-between">
           <NavLink to="/" end aria-label="Home" className="shrink-0">
             <img
-              src="/images/logo.png"
+              src="/images/logoGold.PNG"
               alt=""
-              className={cn("h-24 w-24 rounded-full object-cover", !scrolled && "hidden")}
+              className={cn(
+                "h-30 w-30 rounded-full object-cover",
+                !scrolled && "hidden",
+              )}
             />
             <img
-              src="/images/logo-dark.png"
+              src="/images/logoGold.PNG"
               alt=""
-              className={cn("h-24 w-24 rounded-full object-cover", scrolled && "hidden")}
+              className={cn(
+                "h-30 w-30 rounded-full object-cover",
+                scrolled && "hidden",
+              )}
             />
           </NavLink>
           {/* Desktop Links */}
@@ -53,10 +64,10 @@ export default function Navbar() {
                     "relative pb-1 tracking-wide transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-1 after:w-full after:origin-left after:bg-current after:transition-transform after:duration-300 after:content-['']",
                     scrolled
                       ? isActive
-                        ? "text-foreground font-semibold after:scale-x-100"
-                        : "text-muted-foreground hover:text-foreground after:scale-x-0 hover:after:scale-x-100"
+                        ? "font-semibold bg-gradient-to-r from-[#F7E7A1] via-[#D4AF37] to-[#B8860B] bg-clip-text text-transparent after:scale-x-100 after:bg-[#D4AF37]"
+                        : "text-muted-foreground hover:text-[#D4AF37] after:scale-x-0 hover:after:scale-x-100"
                       : isActive
-                        ? "text-white font-semibold after:scale-x-100"
+                        ? "font-semibold bg-gradient-to-r from-[#F7E7A1] via-[#D4AF37] to-[#B8860B] bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(212,175,55,0.5)] after:scale-x-100 after:bg-[#D4AF37]"
                         : "text-white/65 hover:text-white after:scale-x-0 hover:after:scale-x-100",
                   )
                 }
@@ -69,7 +80,7 @@ export default function Navbar() {
           <Button
             variant="ghost"
             type="button"
-            className={cn("md:hidden text-white", scrolled && "text-black")}
+            className={cn("md:hidden text-white", scrolled && "text-white")}
             onClick={() => setOpen((prev) => !prev)}
           >
             <Menu className="h-5 w-5" />
@@ -81,7 +92,9 @@ export default function Navbar() {
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent className="p-4 flex flex-col gap-4">
           <SheetTitle className="sr-only">Navigation menu</SheetTitle>
-          <SheetDescription className="sr-only">Navigation menu</SheetDescription>
+          <SheetDescription className="sr-only">
+            Navigation menu
+          </SheetDescription>
           {navItems.map(({ label, to }) => (
             <NavLink
               key={to}
@@ -90,10 +103,10 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               className={({ isActive }) =>
                 cn(
-                  "rounded-md px-3 py-2 text-base font-medium transition-colors duration-200",
+                  "rounded-md px-3 py-2 text-base font-medium transition-all duration-200",
                   isActive
-                    ? "text-foreground font-semibold"
-                    : "text-muted-foreground",
+                    ? "font-semibold bg-gradient-to-r from-[#F7E7A1] via-[#D4AF37] to-[#B8860B] bg-clip-text text-transparent"
+                    : "text-muted-foreground hover:text-[#D4AF37]",
                 )
               }
             >
@@ -102,7 +115,6 @@ export default function Navbar() {
           ))}
         </SheetContent>
       </Sheet>
-
     </>
   );
 }
